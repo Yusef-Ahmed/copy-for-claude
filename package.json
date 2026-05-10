@@ -1,0 +1,64 @@
+{
+  "name": "copy-for-claude",
+  "displayName": "Copy for Claude",
+  "description": "Copy filename and selected line range to clipboard for use with Claude Code",
+  "version": "0.1.0",
+  "publisher": "Yusef-Ahmed",
+  "icon": "icon.png",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": ["Other"],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "copy-for-claude.copyReference",
+        "title": "Copy for Claude: Copy File & Lines"
+      },
+      {
+        "command": "copy-for-claude.copyReferenceWithCode",
+        "title": "Copy for Claude: Copy File, Lines & Code"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "copy-for-claude.copyReference",
+        "key": "ctrl+shift+c",
+        "mac": "cmd+shift+c",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "copy-for-claude.copyReferenceWithCode",
+        "key": "ctrl+shift+x",
+        "mac": "cmd+shift+x",
+        "when": "editorTextFocus"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "copy-for-claude.copyReference",
+          "group": "9_cutcopypaste",
+          "when": "editorTextFocus"
+        },
+        {
+          "command": "copy-for-claude.copyReferenceWithCode",
+          "group": "9_cutcopypaste",
+          "when": "editorTextFocus"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.85.0",
+    "@types/node": "^20.0.0",
+    "typescript": "^5.3.0"
+  }
+}
