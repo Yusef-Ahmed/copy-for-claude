@@ -8,6 +8,8 @@ A VS Code extension that copies file references — with or without selected cod
 
 **Copy File, Lines & Code** — copies the same reference plus the selected code wrapped in a fenced code block, ready to paste into a Claude conversation.
 
+**Reference link navigation** — recognize `@workspace/path/to/file.ts:line` references in text and click them to open the file with the specified line range selected. Use Ctrl+Click on Windows/Linux or Cmd+Click on macOS to follow the link.
+
 ### Example output
 
 Reference only:

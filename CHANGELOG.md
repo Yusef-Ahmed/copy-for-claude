@@ -2,6 +2,14 @@
 
 All notable changes to **Copy for Claude** will be documented here.
 
+## [0.1.3] - 2026-05-24
+
+### Added
+- Document link support for `@workspace/path/to/file.ts:line` references.
+- Clicking a reference opens the target file and highlights the requested line range.
+- Supports workspace-prefixed file references and line-range notation.
+- Shows confirmation messages when references are copied: `Reference copied` and `Reference with code copied`.
+
 ## [0.1.0] - 2025-05-10
 
 ### Added
