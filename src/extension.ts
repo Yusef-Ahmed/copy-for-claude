@@ -125,11 +125,7 @@ export function activate(context: vscode.ExtensionContext) {
 
         const text = getReference(editor, false);
 
-        await vscode.env.clipboard.writeText(text);
-
-        vscode.window.showInformationMessage(
-          'Reference copied'
-        );
+        await vscode.env.clipboard.writeText(text + ' ');
       }
     )
   );
@@ -146,11 +142,7 @@ export function activate(context: vscode.ExtensionContext) {
 
         const text = getReference(editor, true);
 
-        await vscode.env.clipboard.writeText(text);
-
-        vscode.window.showInformationMessage(
-          'Reference with code copied'
-        );
+        await vscode.env.clipboard.writeText(text + ' ');
       }
     )
   );

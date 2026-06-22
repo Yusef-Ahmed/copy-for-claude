@@ -83,8 +83,7 @@ function activate(context) {
             return;
         }
         const text = getReference(editor, false);
-        await vscode.env.clipboard.writeText(text);
-        vscode.window.showInformationMessage('Reference copied');
+        await vscode.env.clipboard.writeText(text + ' ');
     }));
     context.subscriptions.push(vscode.commands.registerCommand('copy-for-claude.copyReferenceWithCode', async () => {
         const editor = vscode.window.activeTextEditor;
@@ -92,8 +91,7 @@ function activate(context) {
             return;
         }
         const text = getReference(editor, true);
-        await vscode.env.clipboard.writeText(text);
-        vscode.window.showInformationMessage('Reference with code copied');
+        await vscode.env.clipboard.writeText(text + ' ');
     }));
     context.subscriptions.push(vscode.commands.registerCommand('copy-for-claude.openReference', async (filePath, startLine, endLine) => {
         const uri = vscode.Uri.file(filePath);
